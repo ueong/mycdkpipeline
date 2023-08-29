@@ -1,0 +1,97 @@
+{
+  "stackName": "amplify-snapshotmanagementto-main-145655",
+  "props": {
+    "templateFile": "root-stack-template.json",
+    "parameters": {
+      "AuthRoleName": "amplify-snapshotmanagementto-main-145655-authRole",
+      "UnauthRoleName": "amplify-snapshotmanagementto-main-145655-unauthRole",
+      "DeploymentBucketName": "amplify-snapshotmanagementto-main-145655-deployment"
+    },
+    "preserveLogicalIds": true,
+    "loadNestedStacks": {
+      "APIGatewayAuthStack": {
+        "templateFile": "auth/APIGatewayAuthStack.json",
+        "parameters": {
+          "env": "main"
+        },
+        "preserveLogicalIds": true,
+        "loadNestedStacks": {}
+      },
+      "apiclusters": {
+        "templateFile": "api/clusters/clusters-cloudformation-template.json",
+        "parameters": {
+          "env": "main"
+        },
+        "preserveLogicalIds": true,
+        "loadNestedStacks": {}
+      },
+      "authsnapshotmanagementtoe7959597": {
+        "templateFile": "auth/snapshotmanagementtoe7959597/snapshotmanagementtoe7959597-cloudformation-template.json",
+        "parameters": {
+          "identityPoolName": "snapshotmanagementtoe7959597_identitypool_e7959597",
+          "allowUnauthenticatedIdentities": false,
+          "resourceNameTruncated": "snapshe7959597",
+          "userPoolName": "snapshotmanagementtoe7959597_userpool_e7959597",
+          "autoVerifiedAttributes": [
+            "email"
+          ],
+          "mfaConfiguration": "OFF",
+          "mfaTypes": [
+            "SMS Text Message"
+          ],
+          "smsAuthenticationMessage": "Your authentication code is {####}",
+          "smsVerificationMessage": "Your verification code is {####}",
+          "emailVerificationSubject": "Your verification code",
+          "emailVerificationMessage": "Your verification code is {####}",
+          "defaultPasswordPolicy": false,
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": [],
+          "requiredAttributes": [
+            "email",
+            "name"
+          ],
+          "aliasAttributes": [],
+          "userpoolClientGenerateSecret": false,
+          "userpoolClientRefreshTokenValidity": 30,
+          "userpoolClientWriteAttributes": [],
+          "userpoolClientReadAttributes": [],
+          "userpoolClientLambdaRole": "snapshe7959597_userpoolclient_lambda_role",
+          "userpoolClientSetAttributes": false,
+          "sharedId": "e7959597",
+          "resourceName": "snapshotmanagementtoe7959597",
+          "authSelections": "identityPoolAndUserPool",
+          "useDefault": "manual",
+          "usernameAttributes": [
+            "email"
+          ],
+          "triggers": "{}",
+          "userPoolGroupList": [],
+          "serviceName": "Cognito",
+          "usernameCaseSensitive": false,
+          "useEnabledMfas": true,
+          "breakCircularDependency": true,
+          "dependsOn": [],
+          "permissions": [],
+          "thirdPartyAuth": false,
+          "userPoolGroups": false,
+          "adminQueries": false,
+          "hostedUI": false,
+          "authProviders": [],
+          "env": "main"
+        },
+        "preserveLogicalIds": true,
+        "loadNestedStacks": {}
+      },
+      "functionClusterBackendFunction": {
+        "templateFile": "function/ClusterBackendFunction/ClusterBackendFunction-cloudformation-template.json",
+        "parameters": {
+          "deploymentBucketName": "amplify-snapshotmanagementto-main-145655-deployment",
+          "s3Key": "amplify-builds/ClusterBackendFunction-514f7658427665655a54-build.zip",
+          "env": "main"
+        },
+        "preserveLogicalIds": true,
+        "loadNestedStacks": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "category": "api",
+    "resourceName": "clusters",
+    "service": "API Gateway"
+  },
+  {
+    "category": "auth",
+    "resourceName": "snapshotmanagementtoe7959597",
+    "service": "Cognito"
+  },
+  {
+    "category": "function",
+    "resourceName": "ClusterBackendFunction",
+    "service": "Lambda"
+  }
+]
